@@ -1,0 +1,119 @@
+:root {
+    --navbar-primary: #1e1f30;
+    --font-color-nav: #aeaeae;
+    --body-color: #0c0d14;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.my2 {
+    margin: 0 2px;
+}
+
+.my5 {
+    margin: 0 5px;
+}
+
+.my10 {
+    margin: 0 10px;
+}
+
+.mx2 {
+    margin: 2px 0;
+}
+
+.mx5 {
+    margin: 5px 0;
+}
+
+.mx10 {
+    margin: 10p 0x;
+}
+
+body {
+    position: relative;
+    background-color: var(--body-color);
+}
+
+/* header section */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    background-color: var(--navbar-primary);
+}
+
+.navbar .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+}
+
+.navbar .logo .icon-color {
+    color: var(---font-color-nav);
+}
+
+.navbar .logo {
+    font-family: 'Barrio';
+    font-size: 16px;
+    color: var(--font-color-nav);
+}
+
+.sidebar {
+    position: absolute;
+    display: block;
+    width: max-content;   
+    background-color: var(--navbar-primary);
+    color: var(--font-color-nav);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.sidebar .list {
+    padding: 10px;
+    list-style: none;   
+}
+
+.sidebar .list li {   
+    padding: 10px 0;
+}
+
+
+.sidebar .list li span {
+    padding-left: 10px;
+    display: none;
+}
+
+.sidebar .list:hover span {
+    display: inline-block;
+}
+
+.sidebar .catagory .list a {
+    color: var(--font-color-nav);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Roboto';
+}
+
+.game-container {
+    margin-left: 50px;
+}
+
+.game-container .games .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+}
+
+.game-container .games .list .game {
+    color: #fff;
+    text-align: center;
+}
