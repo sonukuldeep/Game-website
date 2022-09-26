@@ -116,4 +116,6 @@ body {
 .game-container .games .list .game {
     color: #fff;
     text-align: center;
+    max-width: 300px;
+    
 }
