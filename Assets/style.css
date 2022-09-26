@@ -69,7 +69,7 @@ body {
 .sidebar {
     position: absolute;
     display: block;
-    width: max-content;   
+    width: max-content;
     background-color: var(--navbar-primary);
     color: var(--font-color-nav);
     border-right: 1px solid rgba(255, 255, 255, 0.3);
@@ -79,10 +79,10 @@ body {
 
 .sidebar .list {
     padding: 10px;
-    list-style: none;   
+    list-style: none;
 }
 
-.sidebar .list li {   
+.sidebar .list li {
     padding: 10px 0;
 }
 
@@ -107,15 +107,34 @@ body {
     margin-left: 50px;
 }
 
+/* grid styles */
+
 .game-container .games .list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     list-style: none;
+    /* gap: 1rem; */
+}
+
+.game-container .games .list li {
+    margin-top: 1rem;
 }
 
 .game-container .games .list .game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #aeaeae; */
+}
+
+.game-container .games .list .game img {
+    max-height: 200px;
+    min-width: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.game-container .games .list .game h3,.game-container .games .list p {
     color: #fff;
-    text-align: center;
-    max-width: 300px;
-    
+    font-family: 'Roboto';
 }
