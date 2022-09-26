@@ -53,20 +53,52 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 150px;
+    width: 180px;
+    font-family: 'Barrio';
+    font-size: 16px;
+    color: var(--font-color-nav);    
 }
 
 .navbar .logo .icon-color {
     color: var(---font-color-nav);
 }
 
-.navbar .logo {
-    font-family: 'Barrio';
-    font-size: 16px;
-    color: var(--font-color-nav);
+.navbar .searchbar input {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
 }
 
-.sidebar {
+.navbar .user-btns button {
+    
+    color: var(--navbar-primary);
+    width: max-content;
+    height: 30px;
+    padding: 0 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    background-color: var(--font-color-nav);
+    font-family: 'Roboto';
+}
+
+.navbar .user-btns button:hover {
+    animation-duration: 0.3s;
+    animation-name: nav-btn;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nav-btn {
+    
+    to {
+        background-color: #fff;
+
+    }
+    
+}
+
+/* sidebar */
+#sidebar {
     position: absolute;
     display: block;
     width: max-content;
@@ -74,34 +106,65 @@ body {
     color: var(--font-color-nav);
     border-right: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
 }
 
-.sidebar .list {
+#sidebar .list {
     padding: 10px;
     list-style: none;
 }
 
-.sidebar .list li {
+#sidebar .list li {
     padding: 10px 0;
+    
 }
 
-
-.sidebar .list li span {
+#sidebar .list li span::before {
+    content: '';
     padding-left: 10px;
-    display: none;
 }
 
-.sidebar .list:hover span {
-    display: inline-block;
+#sidebar .list li span {
+    display: inline-block;  
+    width: 0;  
+    opacity: 0;
+    white-space: nowrap;
+    transition: padding-left 0.3s;
 }
 
-.sidebar .catagory .list a {
+#sidebar .list:hover span {
+    animation-name: sidebar-ani;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+#sidebar .list span:hover {
+    padding-left: 10px;
+
+}
+
+@keyframes sidebar-ani {
+    50% {
+        width: 130px;
+    }
+    100% {
+        opacity: 1;
+        width: 130px;
+    }
+}
+
+#sidebar .catagory .list a {
     color: var(--font-color-nav);
     text-decoration: none;
     text-transform: capitalize;
     font-family: 'Roboto';
 }
+
+#sidebar .list li .active {
+    color: green;
+}
+
+/* sidebar end */
 
 .game-container {
     margin-left: 50px;
@@ -124,7 +187,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: #aeaeae; */
 }
 
 .game-container .games .list .game img {
@@ -132,6 +194,11 @@ body {
     min-width: 300px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.game-container .games .list .game:hover img {
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+
 }
 
 .game-container .games .list .game h3,.game-container .games .list p {

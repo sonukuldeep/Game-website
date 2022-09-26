@@ -10,14 +10,15 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="./Assets/script.js" defer></script>
     <script src="https://kit.fontawesome.com/77012cdc7a.js" crossorigin="anonymous"></script>
-    <title>Weird Online Games</title>
+    <title>Weird Games</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo my5"><i class="fa-regular fa-face-smile-beam icon-color fa-xl"></i>
-                <h2>Weird OGs</h2>
+            <div class="logo my10">
+                <i class="fa-regular fa-face-smile-beam icon-color fa-xl"></i>
+                <h2>Weird Games</h2>
             </div>
             <div class="searchbar">
                 <form action="#">
@@ -25,19 +26,19 @@
                     <input type="text" id="search" placeholder="search">
                 </form>
             </div>
-            <div class="mygames my5">
-                <button>My Games</button>
+            <div class="user-btns my10">
+                <button>My Favourite Games</button>
                 <button>Login</button>
             </div>
         </nav>
-        <nav class="sidebar">
+        <nav id="sidebar">
             <div class="catagory">
                 <ul class="list">
-                    <li><i class="fa-solid fa-house"></i><a href="#"><span>home</span></a></li>
-                    <li><i class="fa-regular fa-clock"></i><a href="#"><span>recent</span></a></li>
-                    <li><i class="fa-solid fa-fire"></i><a href="#"><span>trending</span></a></li>
-                    <li><i class="fa-solid fa-star"></i><a href="#"><span>new games</span></a></li>
-                    <li><i class="fa-solid fa-arrows-spin"></i><a href="#"><span>updated games</span></a></li>
+                    <li><i class="fa-solid fa-house"></i><a href="#"><span onClick="Activate(this)" class="active">home</span></a></li>
+                    <li><i class="fa-regular fa-clock"></i><a href="#" ><span onClick="Activate(this)">recent</span></a></li>
+                    <li><i class="fa-solid fa-fire"></i><a href="#" ><span onClick="Activate(this)">trending</span></a></li>
+                    <li><i class="fa-solid fa-star"></i><a href="#" ><span onClick="Activate(this)">new games</span></a></li>
+                    <li><i class="fa-solid fa-arrows-spin"></i><a href="#" ><span onClick="Activate(this)">updated games</span></a></li>
                 </ul>
             </div>
         </nav>
@@ -60,7 +61,7 @@
                     <li>
                         <div class="game">
                             <a href="#">
-                                <img src="https://source.unsplash.com/300x301/?games" alt="loading image...">
+                                <img src="./Assets/images/source.unsplash.jpg" alt="loading image...">
                                 </img>
                             </a>
                             <h3>game 2</h3>
@@ -70,7 +71,7 @@
                     <li>
                         <div class="game">
                             <a href="#">
-                                <img src="https://source.unsplash.com/300x302/?games" alt="loading image...">
+                                <img src="./Assets/images/source.unsplash.jpg" alt="loading image...">
                                 </img>
                             </a>
                             <h3>game 3</h3>
@@ -80,7 +81,7 @@
                     <li>
                         <div class="game">
                             <a href="#">
-                                <img src="https://source.unsplash.com/300x303/?games" alt="loading image...">
+                                <img src="./Assets/images/source.unsplash.jpg" alt="loading image...">
                                 </img>
                             </a>
                             <h3>game 4</h3>
@@ -90,7 +91,7 @@
                     <li>
                         <div class="game">
                             <a href="#">
-                                <img src="https://source.unsplash.com/300x304/?games" alt="loading image...">
+                                <img src="./Assets/images/source.unsplash2.jpg" alt="loading image...">
                                 </img>
                             </a>
                             <h3>game 5</h3>
@@ -100,7 +101,7 @@
                     <li>
                         <div class="game">
                             <a href="#">
-                                <img src="https://source.unsplash.com/300x305/?games" alt="loading image...">
+                                <img src="./Assets/images/source.unsplash2.jpg" alt="loading image...">
                                 </img>
                             </a>
                             <h3>game 6</h3>
@@ -110,7 +111,7 @@
                     <li>
                         <div class="game">
                             <a href="#">
-                                <img src="https://source.unsplash.com/300x305/?games" alt="loading image...">
+                                <img src="./Assets/images/source.unsplash2.jpg" alt="loading image...">
                                 </img>
                             </a>
                             <h3>game 6</h3>
@@ -120,7 +121,7 @@
                     <li>
                         <div class="game">
                             <a href="#">
-                                <img src="https://source.unsplash.com/300x305/?games" alt="loading image...">
+                                <img src="./Assets/images/source.unsplash2.jpg" alt="loading image...">
                                 </img>
                             </a>
                             <h3>game 6</h3>
