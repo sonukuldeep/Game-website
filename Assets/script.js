@@ -39,3 +39,11 @@ document.addEventListener("mousemove", (e) => {
     anchor.style.filter = `hue-rotate(${angleInDeg}deg)`;
   });
 });
+
+
+//login_logout
+function enableForm(...element) {
+  document.querySelector("." + element[0]).classList.add("disable")
+  document.querySelector("." + element[1]).classList.remove("disable")
+  console.log(element)
+}
