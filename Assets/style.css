@@ -181,10 +181,6 @@ body {
 
 .sigmup-signin-window {
     position: relative;
-    outline: 3px solid red;
-    width: 100px;
-    background-color: rgba(255, 255, 255, 0.3);
-    z-index: 4;
 
 }
 
@@ -200,7 +196,7 @@ body {
 .signin-box {
     font-family: "Roboto", sans-serif;
     width: 360px;
-    height: 620px;
+    height: 550px;
     margin: 3.5rem 0;
     background-color: white;
     border-radius: 3px;
@@ -225,7 +221,7 @@ h4 {
 }
 
 .signin-signup-form {
-    width: 300px;
+    width: 320px;
     margin-left: 20px;
 }
 
@@ -244,7 +240,7 @@ h4 {
     outline: none;
 }
 
-.signin-signup-form input[type="button"] {
+.signin-signup-form button[type="submit"] {
     width: 320px;
     height: 35px;
     margin-top: 20px;
@@ -252,13 +248,14 @@ h4 {
     background-color: #49c1a2;
     color: #fff;
     font-size: 18px;
+    border-radius: 4px;
 }
 
-.signin-signup-form input[type="button"]:hover {
+.signin-signup-form button[type="submit"]:hover {
     background-color: #34a98c;
 }
 
-.signin-signup-form input[type="button"]:active {
+.signin-signup-form button[type="submit"]:active {
     background-color: #27836c;
 }
 
@@ -305,7 +302,7 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 2;
 }
 

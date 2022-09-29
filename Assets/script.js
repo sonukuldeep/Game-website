@@ -1,15 +1,17 @@
+//sidebar icon animation
 const currentTab = document.querySelectorAll('#sidebar .list li span');
- 
+
 function removeTag() {
-    currentTab.forEach((element) => {
-            element.classList.remove('active')
-    })
+  currentTab.forEach((element) => {
+    element.classList.remove('active')
+  })
 }
 
 function Activate(target) {
-    removeTag()
-    target.classList.add('active')
+  removeTag()
+  target.classList.add('active')
 }
+//sidebar icon animation end
 
 //cat animation
 const eyes = document.querySelectorAll(".eyes");
@@ -39,7 +41,7 @@ document.addEventListener("mousemove", (e) => {
     anchor.style.filter = `hue-rotate(${angleInDeg}deg)`;
   });
 });
-
+//cat animation end
 
 //login_logout
 function enableForm(...element) {
@@ -56,9 +58,45 @@ function closeBtn(element) {
 
 function overlayOn() {
   document.querySelector(".overlay").style.display = "block";
-  console.log("fire")
 }
 
 function overlayOff() {
   document.querySelector(".overlay").style.display = "none";
 }
+//login_logout end
+
+//login_logout submit
+const signup = document.getElementById('signup-form')
+const fname = document.getElementById('fname')
+const lname = document.getElementById('lname')
+const email = document.getElementById('signup_email')
+const passwd = document.getElementById('password')
+const cpasswd = document.getElementById('cpassword')
+
+signup.addEventListener('submit', (e) => {
+  if (passwd.value === '' || passwd.value.length < 8 && passwd.value === cpasswd.value) {
+    passwd.placeholder = "password dont match or are empty"
+    passwd.style.border = "2px solid red";
+
+  }
+  else
+    console.log('form submitted')
+  e.preventDefault();
+})
+
+const signin = document.getElementById('signin')
+const signin_email = document.getElementById('email')
+const signin_passwd = document.getElementById('passwd')
+
+signin.addEventListener('submit', (e) => {
+  if (signin_passwd.value === '' || signin_passwd.value.length < 8) {
+    signin_passwd.style.border = "2px solid red";
+    signin_passwd.placeholder = "Cannot be empty";
+    console.log('fire', signin_passwd.value.length)
+  }
+  else
+    console.log('form submitted')
+
+  e.preventDefault();
+})
+//login_logout submit end

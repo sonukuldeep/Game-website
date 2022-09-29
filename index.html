@@ -64,7 +64,7 @@
                     <button class="close-btn" type="button" onclick="closeBtn('signup-box')">&times;</button>
                     <h1>Sign Up</h1>
                     <h4>It's free and only takes a minute</h4>
-                    <form class="signin-signup-form" name="signup" action="#" method="post" autocomplete="off">
+                    <form class="signin-signup-form" id="signup-form" name="signup" action="#" method="post" autocomplete="off">
                         <label for="fname">First Name</label>
                         <input id="fname" name="firstname" type="text" placeholder="" />
                         <label for="lname">Last Name</label>
@@ -75,7 +75,7 @@
                         <input id="password" name="password" type="password" placeholder="" />
                         <label for="cpassword">Confirm Password</label>
                         <input id="cpassword" type="password" placeholder="" />
-                        <input type="button" value="Submit" />
+                        <button type="submit">Submit</button>
                     </form>
                     <p>
                         By clicking the Sign Up button,you agree to our <br />
@@ -90,12 +90,12 @@
                 <div class="signin-box signin-signup disable">
                     <button class="close-btn" type="button" onclick="closeBtn('signin-box')">&times;</button>
                     <h1>Login</h1>
-                    <form class="signin-signup-form" name="signin" action="#" method="post" autocomplete="off">
+                    <form class="signin-signup-form" id="signin" name="signin" action="#" method="post" autocomplete="off">
                         <label for="email">Email</label>
                         <input id="email" name="email" type="email" placeholder="" />
                         <label for="passwd">Password</label>
                         <input id="passwd" name="passwd" type="password" placeholder="" />
-                        <input type="button" value="Submit" />
+                        <button type="submit">Submit</button>
                     </form>
                     <p class="para-2">
                         Don't have an account? <a href="#" onclick="enableForm('signin-box','signup-box')">Sign Up
