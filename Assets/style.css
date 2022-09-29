@@ -63,8 +63,9 @@ body {
     color: var(---font-color-nav);
 }
 
+
 .navbar .searchbar input {
-    width: 250px;
+    width: max(100px, 30vw);
     height: 30px;
     border-radius: 5px;
     outline: none;
@@ -77,7 +78,7 @@ body {
     height: 30px;
     padding: 0 10px;
     margin: 0 5px;
-    border-radius: 5px;
+    border-radius: 5px/10px;
     background-color: var(--font-color-nav);
     font-family: 'Roboto';
 }
@@ -95,6 +96,10 @@ body {
 
     }
 
+}
+
+.navbar .user-btn-alt {
+    display: none;
 }
 
 /* sidebar */
@@ -172,60 +177,74 @@ body {
 /* sidebar end */
 
 /* signin signup */
+
+
 .sigmup-signin-window {
     position: relative;
-    /* outline: 1px solid red; */
-    /* display: none; */
+    outline: 3px solid red;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 4;
+
 }
 
-.signup-box, .signin-box {
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px;
+    z-index: 4;
+}
+
+.signup-box,
+.signin-box {
     font-family: "Roboto", sans-serif;
     width: 360px;
     height: 620px;
-    margin: auto;
+    margin: 3.5rem 0;
     background-color: white;
     border-radius: 3px;
     position: absolute;
     top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 3;
-  }
-  
-  .signin-box {
+}
+
+.signin-box {
     height: 280px;
-  }
-  
-  h1 {
+}
+
+h1 {
     text-align: center;
     padding-top: 15px;
-  }
-  
-  h4 {
+}
+
+h4 {
     text-align: center;
-  }
-  
-  .signin-signup-form {
+}
+
+.signin-signup-form {
     width: 300px;
     margin-left: 20px;
-  }
-  
-  .signin-signup-form label {
+}
+
+.signin-signup-form label {
     display: flex;
     margin-top: 20px;
     font-size: 18px;
-  }
-  
-  .signin-signup-form input {
+}
+
+.signin-signup-form input {
     width: 100%;
     padding: 7px;
     border: none;
     border: 1px solid gray;
     border-radius: 6px;
     outline: none;
-  }
-  
-  .signin-signup-form input[type="button"] {
+}
+
+.signin-signup-form input[type="button"] {
     width: 320px;
     height: 35px;
     margin-top: 20px;
@@ -233,15 +252,23 @@ body {
     background-color: #49c1a2;
     color: #fff;
     font-size: 18px;
-  }
-  
-  p {
+}
+
+.signin-signup-form input[type="button"]:hover {
+    background-color: #34a98c;
+}
+
+.signin-signup-form input[type="button"]:active {
+    background-color: #27836c;
+}
+
+p {
     text-align: center;
     padding-top: 20px;
     font-size: 15px;
-  }
-  
-  .para-2 {
+}
+
+.para-2 {
     padding-top: 0px;
     color: #fff;
     position: absolute;
@@ -250,36 +277,45 @@ body {
     transform: translateX(-50%);
     white-space: nowrap;
     z-index: 1;
-  }
-  
-  .para-2 a {
-    color: #49c1a2;
-  }
-  
-  .signin-signup.disable {
-    display: none;
-  }
+}
 
-  /* article:nth-child(2) {
-    /* Add the blur effect */
-  /*filter: blur(8px);
-  -webkit-filter: blur(8px);
-  } */
+.para-2 a {
+    color: #49c1a2;
+}
+
+.signin-signup.disable {
+    /* display: none; */
+    visibility: hidden;
+}
 
 /* signin signup */
 
 .game-container {
     margin-left: 50px;
+}
 
+/* overlay */
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 /* cat animation */
 #cat {
     display: inline-block;
-    position: relative;
+    position: fixed;
     /* outline: 2px solid red; */
     left: 0px;
-    bottom: 0px;
+    bottom: -20px;
 }
 
 #cat:hover {
@@ -346,4 +382,39 @@ body {
 .game-container .games .list p {
     color: #fff;
     font-family: 'Roboto';
+}
+
+
+@media (max-width: 600px) {
+    #cat {
+        display: none;
+    }
+
+    .navbar .user-btns {
+        display: none;
+    }
+
+    .navbar .user-btn-alt {
+        display: block;
+    }
+
+    .navbar .user-btn-alt div {
+        position: relative;
+        color: #fff;
+
+
+    }
+
+    .navbar .user-btn-alt ul {
+        position: absolute;
+        display: none;
+        color: #fff;
+        list-style: none;
+    }
+
+    .navbar .user-btn-alt:hover ul {
+        display: block;
+        /* outline: 2px solid red; */
+        /* color: black; */
+    }
 }

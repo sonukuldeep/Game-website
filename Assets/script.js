@@ -45,5 +45,20 @@ document.addEventListener("mousemove", (e) => {
 function enableForm(...element) {
   document.querySelector("." + element[0]).classList.add("disable")
   document.querySelector("." + element[1]).classList.remove("disable")
-  console.log(element)
+  overlayOn();
+}
+
+
+function closeBtn(element) {
+  document.querySelector("." + element).classList.add("disable")
+  overlayOff();
+}
+
+function overlayOn() {
+  document.querySelector(".overlay").style.display = "block";
+  console.log("fire")
+}
+
+function overlayOff() {
+  document.querySelector(".overlay").style.display = "none";
 }
