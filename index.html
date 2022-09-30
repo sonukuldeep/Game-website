@@ -28,8 +28,8 @@
             </div>
             <div class="user-btns my10">
                 <button type="button"><i class="fa-solid fa-heart"></i> <span>My Favourite Games</span></button>
-                <button type="button" onclick="enableForm('signup-box','signin-box')"><i class="fas fa-sign-in"></i>
-                    <span>Login</span></button>
+                <button type="button" id="username" onclick="enableForm('signup-box','signin-box')"><i class="fas fa-sign-in"></i>
+                    <span >Login</span></button>
             </div>
             <div class="user-btn-alt my10">
                 <div><i class="fa-solid fa-bars"></i>
@@ -61,7 +61,7 @@
         <article>
             <div class="signup-signin-window">
                 <div class="signup-box signin-signup disable">
-                    <button class="close-btn" type="button" onclick="closeBtn('signup-box')">&times;</button>
+                    <button class="close-btn" type="button" onclick="closeBtn('.signup-box')">&times;</button>
                     <h1>Sign Up</h1>
                     <h4>It's free and only takes a minute</h4>
                     <form class="signin-signup-form" id="signup-form" name="signup" action="#" method="post" autocomplete="off">
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="signin-box signin-signup disable">
-                    <button class="close-btn" type="button" onclick="closeBtn('signin-box')">&times;</button>
+                    <button class="close-btn" type="button" onclick="closeBtn('.signin-box')">&times;</button>
                     <h1>Login</h1>
                     <form class="signin-signup-form" id="signin" name="signin" action="#" method="post" autocomplete="off">
                         <label for="email">Email</label>
@@ -101,6 +101,11 @@
                         Don't have an account? <a href="#" onclick="enableForm('signin-box','signup-box')">Sign Up
                             Here</a>
                     </p>
+                </div>
+                <div class="signin-signup logout-box disable">
+                    <h2>See you later <i class="fa-regular fa-heart"></i></h2>
+                    <button class="close-btn">&times;</button>
+                    <button onclick="logout(this)"><h3>Log out</h3></button>
                 </div>
             </div>
         </article>

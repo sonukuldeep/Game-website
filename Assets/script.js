@@ -1,3 +1,5 @@
+let loginStatus = false 
+
 //sidebar icon animation
 const currentTab = document.querySelectorAll('#sidebar .list li span');
 
@@ -58,7 +60,7 @@ function enableForm(...element) {
 
 
 function closeBtn(element) {
-  document.querySelector("." + element).classList.add("disable")
+  document.querySelector(element).classList.add("disable")
   overlayOff();
 }
 
@@ -95,23 +97,38 @@ signup.addEventListener('submit', (e) => {
   e.preventDefault();
 
   //saving on localstorage
-  const userdata = { "name": fname.value + lname.value, "email": email.value, "passwd": passwd.value }
+  const userdata = { "name": fname.value + " " + lname.value, "email": email.value, "passwd": passwd.value }
   localStorage.setItem("userdata", JSON.stringify(userdata))
 })
 
 const signin = document.getElementById('signin')
 const signin_email = document.getElementById('email')
 const signin_passwd = document.getElementById('passwd')
-
+// 
+// 
+// 
+// 
+// 
 signin.addEventListener('submit', (e) => {
-
+  if(loginStatus) {
+    const x = document.querySelector(".logout-box")
+    console.log(x)
+    return
+  }
+  // 
+  // 
+  // 
+  // 
   const userdata = JSON.parse(localStorage.getItem("userdata"))
   try {
 
     if (userdata.email !== signin_email.value || userdata.passwd !== signin_passwd.value)
       tooltip(signin, "Email Or Password don't match!");
-    else
-      console.log("success")
+    else {
+      // console.log("success")
+      loginSuccess(userdata.name)
+      closeBtn(".signin-box")
+    }
   } catch (error) {
     console.log(error)
     tooltip(signin, "User doesn't exist");
@@ -133,5 +150,22 @@ function tooltip(element, msg) {
   // console.log(element.childNodes)
   tip.style =
     "padding: 8px; width: fit-content; margin: auto; color: red"
+
+}
+
+function loginSuccess(name) {
+  const user = document.querySelector("#username")
+  user.lastChild.innerText = `HI! ${name}` 
+  user.firstChild.remove() 
+  loginStatus = true
+
+  // user.after
+  // console.log(user.parentNode.classList)
+}
+
+//logout function
+function logout(element){
+  loginStatus = false
+  console.log(element.parentNode.classList)
 
 }

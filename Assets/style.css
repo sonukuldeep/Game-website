@@ -286,6 +286,32 @@ h4 {
     color: #49c1a2;
 }
 
+.logout-box {
+    width: 300px;
+    height: 150px;
+    background-color: white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+}
+
+.logout-box h2 {
+    text-align: center;
+    padding-top: 15px;;
+}
+
+.logout-box button:nth-child(3) {
+    width: 250px;
+    height:50px;
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform: translate(-50%,-50%)
+    
+}
+
 .signin-signup.disable {
     /* display: none; */
     visibility: hidden;
