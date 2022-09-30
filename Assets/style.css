@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
 }
 
 .my2 {
@@ -196,7 +197,7 @@ body {
 .signin-box {
     font-family: "Roboto", sans-serif;
     width: 360px;
-    height: 550px;
+    height: 580px;
     margin: 3.5rem 0;
     background-color: white;
     border-radius: 3px;
@@ -259,10 +260,15 @@ h4 {
     background-color: #27836c;
 }
 
-p {
+.para-1 {
     text-align: center;
-    padding-top: 20px;
     font-size: 15px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+
 }
 
 .para-2 {

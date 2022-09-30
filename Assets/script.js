@@ -48,6 +48,12 @@ function enableForm(...element) {
   document.querySelector("." + element[0]).classList.add("disable")
   document.querySelector("." + element[1]).classList.remove("disable")
   overlayOn();
+  try {
+    const tooltip = document.getElementById('tooltip')
+    if (tooltip.parentNode) tooltip.parentNode.removeChild(tooltip)
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 
@@ -65,7 +71,7 @@ function overlayOff() {
 }
 //login_logout end
 
-//login_logout submit
+//login_logout form validation
 const signup = document.getElementById('signup-form')
 const fname = document.getElementById('fname')
 const lname = document.getElementById('lname')
@@ -73,15 +79,24 @@ const email = document.getElementById('signup_email')
 const passwd = document.getElementById('password')
 const cpasswd = document.getElementById('cpassword')
 
-signup.addEventListener('submit', (e) => {
-  if (passwd.value === '' || passwd.value.length < 8 && passwd.value === cpasswd.value) {
-    passwd.placeholder = "password dont match or are empty"
-    passwd.style.border = "2px solid red";
 
+signup.addEventListener('submit', (e) => {
+  if (passwd.value.length < 8) {
+    tooltip(signup, "Password should be more than 8 characters");
+    passwd.style.border = '2px solid red'
   }
-  else
-    console.log('form submitted')
+  if (passwd.value !== cpasswd.value) {
+    tooltip(signup, "Password don't match");
+    passwd.style.border = '2px solid red'
+    cpasswd.style.border = '2px solid red'
+  }
+
+  console.log('form submitted')
   e.preventDefault();
+
+  //saving on localstorage
+  const userdata = { "name": fname.value + lname.value, "email": email.value, "passwd": passwd.value }
+  localStorage.setItem("userdata", JSON.stringify(userdata))
 })
 
 const signin = document.getElementById('signin')
@@ -89,14 +104,34 @@ const signin_email = document.getElementById('email')
 const signin_passwd = document.getElementById('passwd')
 
 signin.addEventListener('submit', (e) => {
-  if (signin_passwd.value === '' || signin_passwd.value.length < 8) {
-    signin_passwd.style.border = "2px solid red";
-    signin_passwd.placeholder = "Cannot be empty";
-    console.log('fire', signin_passwd.value.length)
+
+  const userdata = JSON.parse(localStorage.getItem("userdata"))
+  try {
+
+    if (userdata.email !== signin_email.value || userdata.passwd !== signin_passwd.value)
+      tooltip(signin, "Email Or Password don't match!");
+    else
+      console.log("success")
+  } catch (error) {
+    console.log(error)
+    tooltip(signin, "User doesn't exist");
   }
-  else
-    console.log('form submitted')
+  console.log('form submitted')
 
   e.preventDefault();
 })
-//login_logout submit end
+//login_logout form validation end
+
+
+function tooltip(element, msg) {
+  if (document.getElementById('tooltip') !== null)
+    return
+  const tip = document.createElement("p")
+  tip.setAttribute('id', 'tooltip')
+  tip.innerText = msg;
+  element.appendChild(tip)
+  // console.log(element.childNodes)
+  tip.style =
+    "padding: 8px; width: fit-content; margin: auto; color: red"
+
+}
