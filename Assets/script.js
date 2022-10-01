@@ -137,8 +137,8 @@ signin.addEventListener('submit', (e) => {
     console.log(error)
     tooltip(signin, "User doesn't exist");
   }
-  console.log('form submitted')
-
+  // console.log('form submitted')
+  // form submitted
   e.preventDefault();
 })
 //login_logout form validation end
@@ -185,4 +185,31 @@ function loginSuccess(name) {
 function logout() {
   closeBtn(".logout-box")
   loginSuccess(false)
+}
+
+const gamedatabase = {}
+function Favourite(element){
+  const element_parent = element.parentNode
+  game_title_status = element_parent.querySelector('h3').innerHTML
+  element.removeChild(element.firstElementChild)
+  const font_filled_heart = 'fa-solid fa-heart'
+  const font_empty_heart = 'fa-regular fa-heart'
+  if(game_title_status in gamedatabase){
+    gamedatabase[game_title_status] = !gamedatabase[game_title_status]
+  }
+  else {
+    gamedatabase[game_title_status] = true
+  }
+  const font = document.createElement("i")
+  console.log(gamedatabase)
+  font.setAttribute('class',gamedatabase[game_title_status] ? font_filled_heart :font_empty_heart)
+  element.appendChild(font)
+}
+
+//enable favourites
+function EnableFavourites() {
+  const enableFav = document.querySelectorAll(".like-btn")
+  enableFav.forEach((element)=>{
+    element.classList.toggle('disable',!loginStatus)
+  })
 }

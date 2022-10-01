@@ -112,6 +112,7 @@ body {
     color: var(--font-color-nav);
     border-right: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 2;
 }
 
 #sidebar .list {
@@ -313,7 +314,7 @@ h4 {
     
 }
 
-.signin-signup.disable {
+.disable {
     /* display: none; */
     visibility: hidden;
 }
@@ -394,6 +395,7 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .game-container .games .list .game img {
@@ -406,6 +408,21 @@ h4 {
 .game-container .games .list .game:hover img {
     box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
 
+}
+
+.game-container .games .list .game a {
+    position: relative;
+}
+
+.game-container .games .list .game .like-btn {
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    background-color: #fff;
+    width: 30px;
+    height:30px;
+    border-radius: 5px;
+    z-index: 1;
 }
 
 .game-container .games .list .game h3,
