@@ -289,6 +289,7 @@ h4 {
 .logout-box {
     width: 300px;
     height: 150px;
+    z-index: 3;
     background-color: white;
     position: absolute;
     top:50%;

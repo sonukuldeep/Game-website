@@ -28,7 +28,7 @@
             </div>
             <div class="user-btns my10">
                 <button type="button"><i class="fa-solid fa-heart"></i> <span>My Favourite Games</span></button>
-                <button type="button" id="username" onclick="enableForm('signup-box','signin-box')"><i class="fas fa-sign-in"></i>
+                <button type="button" id="username" onclick="enableForm('.signup-box','.signin-box')"><i class="fas fa-sign-in"></i>
                     <span >Login</span></button>
             </div>
             <div class="user-btn-alt my10">
@@ -82,7 +82,7 @@
                         <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
                     </p>
                     <p class="para-2">
-                        Already have an account? <a href="#" onclick="enableForm('signup-box','signin-box')">Login
+                        Already have an account? <a href="#" onclick="enableForm('.signup-box','.signin-box')">Login
                             here</a>
                     </p>
                 </div>
@@ -98,13 +98,13 @@
                         <button type="submit">Submit</button>
                     </form>
                     <p class="para-2">
-                        Don't have an account? <a href="#" onclick="enableForm('signin-box','signup-box')">Sign Up
+                        Don't have an account? <a href="#" onclick="enableForm('.signin-box','.signup-box')">Sign Up
                             Here</a>
                     </p>
                 </div>
                 <div class="signin-signup logout-box disable">
                     <h2>See you later <i class="fa-regular fa-heart"></i></h2>
-                    <button class="close-btn">&times;</button>
+                    <button class="close-btn" onclick="closeBtn('.logout-box')">&times;</button>
                     <button onclick="logout(this)"><h3>Log out</h3></button>
                 </div>
             </div>

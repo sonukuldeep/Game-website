@@ -1,4 +1,4 @@
-let loginStatus = false 
+let loginStatus = false
 
 //sidebar icon animation
 const currentTab = document.querySelectorAll('#sidebar .list li span');
@@ -47,8 +47,21 @@ document.addEventListener("mousemove", (e) => {
 
 //login_logout
 function enableForm(...element) {
-  document.querySelector("." + element[0]).classList.add("disable")
-  document.querySelector("." + element[1]).classList.remove("disable")
+  if (element.length === 1)
+    closeBtn(element)
+
+  else if (element.length === 2) {
+    closeBtn(element[0])
+    closeBtn(element[1],option = 'remove')
+  }
+  else if (element.length === 3) {
+    closeBtn(element)
+    closeBtn(element[1],option = 'remove')
+    closeBtn(element[2],option = 'remove')
+  }
+  else {
+    console.log(" number of elements passed" + element.length)
+  }
   overlayOn();
   try {
     const tooltip = document.getElementById('tooltip')
@@ -59,8 +72,11 @@ function enableForm(...element) {
 }
 
 
-function closeBtn(element) {
-  document.querySelector(element).classList.add("disable")
+function closeBtn(element, option = 'add') {
+  if (option === 'add')
+    document.querySelector(element).classList.add("disable")
+  else
+    document.querySelector(element).classList.remove("disable")
   overlayOff();
 }
 
@@ -104,21 +120,9 @@ signup.addEventListener('submit', (e) => {
 const signin = document.getElementById('signin')
 const signin_email = document.getElementById('email')
 const signin_passwd = document.getElementById('passwd')
-// 
-// 
-// 
-// 
-// 
+
 signin.addEventListener('submit', (e) => {
-  if(loginStatus) {
-    const x = document.querySelector(".logout-box")
-    console.log(x)
-    return
-  }
-  // 
-  // 
-  // 
-  // 
+
   const userdata = JSON.parse(localStorage.getItem("userdata"))
   try {
 
@@ -155,17 +159,30 @@ function tooltip(element, msg) {
 
 function loginSuccess(name) {
   const user = document.querySelector("#username")
-  user.lastChild.innerText = `HI! ${name}` 
-  user.firstChild.remove() 
-  loginStatus = true
+  loginStatus = !loginStatus
+  if(loginStatus){
+    user.lastChild.innerText = `HI! ${name}`
+    user.firstChild.remove()
+    user.onclick = ()=>{enableForm('.signin-box','.logout-box')}
 
-  // user.after
-  // console.log(user.parentNode.classList)
+  }
+  else
+  {
+    const font = document.createElement("i")
+    font.setAttribute('class','fas fa-sign-in')
+    const span = document.createElement("span")
+    span.innerHTML = " Login"
+    user.removeChild(user.firstElementChild)
+    user.appendChild(font)
+    user.appendChild(span)
+    
+    user.onclick = ()=>{enableForm('.signup-box','.login-box')}
+  }
+
 }
 
 //logout function
-function logout(element){
-  loginStatus = false
-  console.log(element.parentNode.classList)
-
+function logout() {
+  closeBtn(".logout-box")
+  loginSuccess(false)
 }
