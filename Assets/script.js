@@ -213,3 +213,7 @@ function EnableFavourites() {
     element.classList.toggle('disable',!loginStatus)
   })
 }
+
+const fetchapi = await fetch('https://gleaming-pink-pea-coat.cyclic.app')
+const parseApi = await fetchapi.json()
+console.log(parseApi)
