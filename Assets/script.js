@@ -218,7 +218,6 @@ async function getDataFromGleem(){
 
   const fetchapi = await fetch('https://gleaming-pink-pea-coat.cyclic.app')
   const parseApi = await fetchapi.json()
-  return parseApi
+  console.log(parseApi)
 } 
-const dataFromServer = await getDataFromGleem() 
-console.log(parseApi)
+getDataFromGleem() 
