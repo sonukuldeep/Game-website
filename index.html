@@ -11,6 +11,18 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="./Assets/script.js" defer></script>
     <script src="https://kit.fontawesome.com/77012cdc7a.js" crossorigin="anonymous"></script>
+    <!-- seo stuff -->
+    <meta name="description" content="Weird games dot com!" />
+    <meta name="keywords" content="tiny unity and godot" />
+    <meta name="author" content="sonukuldeep" />
+    <!-- tags that show when sharing link -->
+    <meta property="og:title" content="Weird games dot com!" />
+    <meta property="og:description" content="Small games made with godot and unity engine" />
+    <meta property="og:image" content="./Assets/images/og_image.png" />
+    <meta property="og:url" content="https://weirdgames.netlify.app" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="weird games dot com" />
+    <meta property="og:locale" content="en_US" />
     <title>Weird Games</title>
 </head>
 
@@ -28,9 +40,11 @@
                 </form>
             </div>
             <div class="user-btns my10">
-                <button type="button" onclick="EnableFavourites()"><i class="fa-solid fa-heart"></i> <span>My Favourite Games</span></button>
-                <button type="button" id="username" onclick="enableForm('.signup-box','.signin-box')"><i class="fas fa-sign-in"></i>
-                    <span >Login</span></button>
+                <button type="button" onclick="EnableFavourites()"><i class="fa-solid fa-heart"></i> <span>My Favourite
+                        Games</span></button>
+                <button type="button" id="username" onclick="enableForm('.signup-box','.signin-box')"><i
+                        class="fas fa-sign-in"></i>
+                    <span>Login</span></button>
             </div>
             <div class="user-btn-alt my10">
                 <div><i class="fa-solid fa-bars"></i>
@@ -65,17 +79,18 @@
                     <button class="close-btn" type="button" onclick="closeBtn('.signup-box')">&times;</button>
                     <h1>Sign Up</h1>
                     <h4>It's free and only takes a minute</h4>
-                    <form class="signin-signup-form" id="signup-form" name="signup" action="#" method="post" autocomplete="off">
+                    <form class="signin-signup-form" id="signup-form" name="signup" action="#" method="post"
+                        autocomplete="off">
                         <label for="fname">First Name</label>
-                        <input id="fname" name="firstname" type="text" placeholder="" required/>
+                        <input id="fname" name="firstname" type="text" placeholder="" required />
                         <label for="lname">Last Name</label>
-                        <input id="lname" name="lastname" type="text" placeholder="" required/>
+                        <input id="lname" name="lastname" type="text" placeholder="" required />
                         <label for="signup_email">Email</label>
-                        <input id="signup_email" name="email" type="email" placeholder="" required/>
+                        <input id="signup_email" name="email" type="email" placeholder="" required />
                         <label for="password">Password</label>
-                        <input id="password" name="password" type="password" placeholder="" required/>
+                        <input id="password" name="password" type="password" placeholder="" required />
                         <label for="cpassword">Confirm Password</label>
-                        <input id="cpassword" type="password" placeholder="" required/>
+                        <input id="cpassword" type="password" placeholder="" required />
                         <button type="submit">Submit</button>
                     </form>
                     <p class="para-1">
@@ -91,11 +106,12 @@
                 <div class="signin-box signin-signup disable">
                     <button class="close-btn" type="button" onclick="closeBtn('.signin-box')">&times;</button>
                     <h1>Login</h1>
-                    <form class="signin-signup-form" id="signin" name="signin" action="#" method="post" autocomplete="off">
+                    <form class="signin-signup-form" id="signin" name="signin" action="#" method="post"
+                        autocomplete="off">
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="" required/>
+                        <input id="email" name="email" type="email" placeholder="" required />
                         <label for="passwd">Password</label>
-                        <input id="passwd" name="passwd" type="password" placeholder="" required/>
+                        <input id="passwd" name="passwd" type="password" placeholder="" required />
                         <button type="submit">Submit</button>
                     </form>
                     <p class="para-2">
@@ -106,7 +122,9 @@
                 <div class="signin-signup logout-box disable">
                     <h2>See you later <i class="fa-regular fa-heart"></i></h2>
                     <button class="close-btn" onclick="closeBtn('.logout-box')">&times;</button>
-                    <button onclick="logout(this)"><h3>Log out</h3></button>
+                    <button onclick="logout(this)">
+                        <h3>Log out</h3>
+                    </button>
                 </div>
             </div>
         </article>
@@ -116,7 +134,8 @@
                 <ul class="list">
                     <li>
                         <div class="game">
-                            <button class="like-btn disable" onclick="Favourite(this)"><i class="fa-regular fa-heart"></i></button>
+                            <button class="like-btn disable" onclick="Favourite(this)"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <a href="./Assets/games/777/index.html">
                                 <img src="./Assets/images/360_F_308713194_mIwfqt9zYEYKufoNEOzFsGqomYJSzK7c.jpg"
                                     alt="loading image...">
@@ -128,7 +147,8 @@
                     </li>
                     <li>
                         <div class="game">
-                            <button class="like-btn disable" onclick="Favourite(this)"><i class="fa-regular fa-heart"></i></button>
+                            <button class="like-btn disable" onclick="Favourite(this)"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <a href="./Assets/games/cow_and_me_v_0.1/index.html">
                                 <img src="./Assets/images/cow.webp" alt="loading image...">
                                 </img>
@@ -139,7 +159,8 @@
                     </li>
                     <li>
                         <div class="game">
-                            <button class="like-btn disable" onclick="Favourite(this)"><i class="fa-regular fa-heart"></i></button>
+                            <button class="like-btn disable" onclick="Favourite(this)"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <a href="#">
                                 <img src="./Assets/images/source.unsplash.jpg" alt="loading image...">
                                 </img>
@@ -150,7 +171,8 @@
                     </li>
                     <li>
                         <div class="game">
-                                <button class="like-btn disable" onclick="Favourite(this)"><i class="fa-regular fa-heart"></i></button>
+                            <button class="like-btn disable" onclick="Favourite(this)"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <a href="#">
                                 <img src="./Assets/images/source.unsplash.jpg" alt="loading image...">
                                 </img>
@@ -161,7 +183,8 @@
                     </li>
                     <li>
                         <div class="game">
-                            <button class="like-btn disable" onclick="Favourite(this)"><i class="fa-regular fa-heart"></i></button>
+                            <button class="like-btn disable" onclick="Favourite(this)"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <a href="#">
                                 <img src="./Assets/images/source.unsplash2.jpg" alt="loading image...">
                                 </img>
@@ -172,7 +195,8 @@
                     </li>
                     <li>
                         <div class="game">
-                            <button class="like-btn disable" onclick="Favourite(this)"><i class="fa-regular fa-heart"></i></button>
+                            <button class="like-btn disable" onclick="Favourite(this)"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <a href="#">
                                 <img src="./Assets/images/source.unsplash2.jpg" alt="loading image...">
                                 </img>
@@ -183,7 +207,8 @@
                     </li>
                     <li>
                         <div class="game">
-                            <button class="like-btn disable" onclick="Favourite(this)"><i class="fa-regular fa-heart"></i></button>
+                            <button class="like-btn disable" onclick="Favourite(this)"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <a href="#">
                                 <img src="./Assets/images/source.unsplash2.jpg" alt="loading image...">
                                 </img>
@@ -194,7 +219,8 @@
                     </li>
                     <li>
                         <div class="game">
-                            <button class="like-btn disable" onclick="Favourite(this)"><i class="fa-regular fa-heart"></i></button>
+                            <button class="like-btn disable" onclick="Favourite(this)"><i
+                                    class="fa-regular fa-heart"></i></button>
                             <a href="#">
                                 <img src="./Assets/images/source.unsplash2.jpg" alt="loading image...">
                                 </img>
