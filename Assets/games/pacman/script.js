@@ -7,8 +7,8 @@ var GAMEFRAME = 0
 var ENDGAME = 0
 var STAGGEREDFRAME = 20
 var beat = true
-const deathBeat = new Audio('/sounds/pacman_death.wav')
-const intermission = new Audio('/sounds/pacman_intermission.wav')
+const deathBeat = new Audio('public/sounds/pacman_death.wav')
+const intermission = new Audio('public/sounds/pacman_intermission.wav')
 
 class Boundary {
     static WIDTH = 40
@@ -179,7 +179,7 @@ function createImage(src) {
 
 function spriteFuntion(sprite) {
     const image = new Image()
-    image.src = `/moving-sprites/${sprite}.png`
+    image.src = `public/moving-sprites/${sprite}.png`
     return image
 }
 
@@ -196,52 +196,52 @@ map.forEach((row, y) => {
     row.map((symbol, x) => {
         switch (symbol) {
             case '-':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeHorizontal.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeHorizontal.png') }))
                 break
             case '|':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeVertical.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeVertical.png') }))
                 break
             case '1':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeCorner1.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeCorner1.png') }))
                 break
             case '2':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeCorner2.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeCorner2.png') }))
                 break
             case '3':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeCorner3.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeCorner3.png') }))
                 break
             case '4':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeCorner4.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeCorner4.png') }))
                 break
             case 'b':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/block.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/block.png') }))
                 break
             case '[':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/capLeft.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/capLeft.png') }))
                 break
             case ']':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/capRight.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/capRight.png') }))
                 break
             case '_':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/capBottom.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/capBottom.png') }))
                 break
             case '^':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/capTop.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/capTop.png') }))
                 break
             case '+':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeCross.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeCross.png') }))
                 break
             case '5':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeConnectorTop.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeConnectorTop.png') }))
                 break
             case '6':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeConnectorRight.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeConnectorRight.png') }))
                 break
             case '7':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeConnectorBottom.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeConnectorBottom.png') }))
                 break
             case '8':
-                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('/boundary/pipeConnectorLeft.png') }))
+                boundries.push(new Boundary({ position: { x: Boundary.WIDTH * x, y: Boundary.HEIGHT * y }, image: createImage('public/boundary/pipeConnectorLeft.png') }))
                 break
             case '.':
                 pallets.push(new Pallet({ position: { x: Boundary.WIDTH * x + Boundary.WIDTH / 2, y: Boundary.HEIGHT * y + Boundary.HEIGHT / 2 } }))
@@ -648,5 +648,5 @@ window.addEventListener('keyup', (e) => {
 })
 
 document.getElementById('github-link').addEventListener('click', () => {
-    window.open('https://github.com', '_blank')
+    window.open('https://github.com/sonukuldeep/js-games', '_blank')
 })
