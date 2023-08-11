@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script type="module" src="script.js"></script>
+
+    <meta name="description" content="Jardinains game using just javascript" />
+    <meta name="keywords" content="Jardinains 2d-game javascript-game" />
+    <meta name="author" content="kuldeep kumar" />
+    <!-- tags that show when sharing link -->
+    <meta property="og:title" content="Jardinains game" />
+    <meta
+      property="og:description"
+      content="Jardinains game using just javascript"
+    />
+    <meta property="og:image" content="./og.webp" />
+    <meta property="og:url" content="https://weirdgames.netlify.app/assets/games/Jardinance" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jardinains game" />
+    <meta property="og:locale" content="en_US" />
+
+    <title>Jardinains</title>
+</head>
+
+<body>
+    <main>
+        <canvas></canvas>
+    </main>
+    <section class="ui">
+        <div id="start" class="activate">
+            <h1>Jardinains with js</h1>
+            <h2>Start game</h2>
+            <button class="restart-btn">Start</button>
+        </div>
+        <div id="gameover">
+            <h1>Game over!</h1>
+            <div class="score">
+                <h2>Coins:- <span class="score-count">0</span></h2>
+            </div>
+            <button class="restart-btn">Restart</button>
+        </div>
+        <div id="restart">
+            <h1>You won!</h1>
+            <div class="score">
+                <h2>Coins:- <span class="score-count">0</span></h2>
+            </div>
+            <button class="restart-btn">Restart</button>
+        </div>
+    </section>
+    <section class="hidden-assets">
+        <div id="character">
+            <img class="character" src="/assets//images/characters.png" alt="">
+            <img class="explosion" src="/assets//images/explosion.png" alt="">
+            <img class="power-up" src="/assets//images/powerUp.png" alt="">
+        </div>
+    </section>
+</body>
+
+</html>
