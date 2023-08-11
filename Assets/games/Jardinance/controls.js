@@ -48,3 +48,27 @@ window.addEventListener('keyup', (e) => {
             console.log(e.key);
     }
 });
+const swipeArea = document.getElementById('main');
+let touchStartX = 0;
+let touchEndX = 0;
+swipeArea.addEventListener('touchstart', handleTouchStart, false);
+swipeArea.addEventListener('touchmove', handleTouchMove, false);
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+}
+function handleTouchMove(event) {
+    touchEndX = event.touches[0].clientX;
+}
+swipeArea.addEventListener('touchend', handleSwipe, false);
+function handleSwipe(event) {
+    const deltaX = touchEndX - touchStartX;
+    if (deltaX > 10) {
+        Move.x = 1;
+    }
+    else if (deltaX < -10) {
+        Move.x = -1;
+    }
+    else {
+        Move.x = 0;
+    }
+}

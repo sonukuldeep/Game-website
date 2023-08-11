@@ -52,3 +52,37 @@ window.addEventListener('keyup', (e) => {
             console.log(e.key)
     }
 })
+
+// touch input testing
+
+const swipeArea = document.getElementById('main')!;
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+swipeArea.addEventListener('touchstart', handleTouchStart, false);
+swipeArea.addEventListener('touchmove', handleTouchMove, false);
+
+function handleTouchStart(event: TouchEvent) {
+    touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event: TouchEvent) {
+    touchEndX = event.touches[0].clientX;
+}
+
+swipeArea.addEventListener('touchend', handleSwipe, false);
+
+function handleSwipe(event: TouchEvent) {
+    const deltaX = touchEndX - touchStartX;
+
+    if (deltaX > 10) {
+        // 'Swiped right'
+        Move.x = 1
+    } else if (deltaX < -10) {
+        // 'Swiped left'
+        Move.x = -1
+    } else {
+        Move.x = 0
+    }
+}
