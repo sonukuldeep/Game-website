@@ -59,6 +59,12 @@ canvas {
 }
 
 @media (width < 768px) {
+    main {
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     canvas {
         outline: none;
     }
