@@ -53,39 +53,25 @@ window.addEventListener('keyup', (e) => {
     }
 })
 
-// touch input testing
-
-const swipeArea = document.querySelector('main')!;
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-swipeArea.addEventListener('touchstart', handleTouchStart, false);
-swipeArea.addEventListener('touchmove', handleTouchMove, false);
-
-function handleTouchStart(event: TouchEvent) {
-    event.preventDefault()
-    touchStartX = event.touches[0].clientX;
+// mouse controls
+function beginSliding(e: PointerEvent) {
+    e.preventDefault()
+    startX = e.clientX
+}
+function moveSlider(e: PointerEvent) {
+    e.preventDefault()
+    endX = e.clientX
+    Move.x = (startX - endX) > 0 ? +1 : -1
 }
 
-function handleTouchMove(event: TouchEvent) {
-    event.preventDefault()
-    touchEndX = event.touches[0].clientX;
+function stopSliding(e: PointerEvent) {
+    e.preventDefault()
+    Move.x = 0
 }
 
-swipeArea.addEventListener('touchend', handleSwipe, false);
-
-function handleSwipe(event: TouchEvent) {
-    event.preventDefault()
-    const deltaX = touchEndX - touchStartX;
-
-    if (deltaX > 10) {
-        // 'Swiped right'
-        Move.x = 1
-    } else if (deltaX < -10) {
-        // 'Swiped left'
-        Move.x = -1
-    } else {
-        Move.x = 0
-    }
-}
+const slider = document.querySelector("main")!;
+let startX = 0
+let endX = 0
+slider.onpointerdown = beginSliding;
+slider.onpointerup = stopSliding;
+slider.onpointermove = moveSlider;
