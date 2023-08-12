@@ -59,7 +59,7 @@ canvas {
 
 @media (width < 768px) {
     canvas {
-        height: 90vh;
+        height: 92vh;
         outline: none;
     }
 }
